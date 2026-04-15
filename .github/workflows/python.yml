@@ -1,0 +1,16 @@
+name: Compilar Python
+on: [push]
+jobs:
+  Develop:
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Obter o codigo
+        uses: action/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v6.2.0
+
+      - name: python-flake8
+        uses: julianwachholz/flake8-action@v2.0.2
+        with:
+          checkName: Develop
